@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for anchor links; offset for the sticky header. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  background: #0b0908;
+}
+
+body {
+  @apply bg-ink-950 text-cream/90 font-sans antialiased;
+}
+
+::selection {
+  background: #d4a85c;
+  color: #0b0908;
+}
+
+/* Slim dark scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0b0908; }
+::-webkit-scrollbar-thumb { background: #3a332d; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #b88b3f; }
+
+@layer components {
+  .section-label {
+    @apply text-xs uppercase tracking-widest2 text-gold-400;
+  }
+  .section-title {
+    @apply font-display text-4xl sm:text-5xl text-cream leading-tight;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3 text-sm font-semibold uppercase tracking-wider text-ink-950 transition hover:bg-gold-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-cream/30 px-7 py-3 text-sm font-semibold uppercase tracking-wider text-cream transition hover:border-gold-400 hover:text-gold-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-300;
+  }
+  .input {
+    @apply w-full rounded-xl border border-ink-600 bg-ink-800 px-4 py-3 text-cream placeholder:text-cream/40 transition focus:border-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
