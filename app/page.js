@@ -105,7 +105,7 @@ export default function Home() {
           </div>
           <div className="reveal">
             <span className="eyebrow">Why Gaurav Gimbal</span>
-            <h2 className="mb-5 mt-5 text-[clamp(1.9rem,3.6vw,3rem)]">Smooth gimbal reels, honest pricing, Jaipur&rsquo;s best light.</h2>
+            <h2 className="mb-5 mt-5 text-[clamp(1.9rem,3.6vw,3rem)]">Smooth gimbal reels., honest pricing, Jaipur&rsquo;s best light.</h2>
             <p className="lead mb-7">
               Gimbal-stabilised video makes every reel feel cinematic, and golden-hour timing makes every photo glow. Pick a slot, pick your locations, and we handle the rest.
             </p>
