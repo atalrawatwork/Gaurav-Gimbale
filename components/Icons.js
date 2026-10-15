@@ -16,6 +16,14 @@ export function InstagramIcon(props) {
   );
 }
 
+export function FacebookIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21h3z" />
+    </svg>
+  );
+}
+
 export function PhoneIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
@@ -47,6 +55,44 @@ export function LogoMark(props) {
       <path d="M11 37A21 21 0 0 1 53 37" fill="none" stroke="#dfbb80" strokeWidth="3" strokeLinecap="round" />
       <path d="M23 27h4l2-3h6l2 3h4a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H23a3 3 0 0 1-3-3V30a3 3 0 0 1 3-3z" fill="none" stroke="#f6f0e4" strokeWidth="3" strokeLinejoin="round" />
       <circle cx="32" cy="36" r="5" fill="#dfbb80" />
+    </svg>
+  );
+}
+
+const stroke = { viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": "true" };
+
+export function SmileIcon(props) {
+  return (
+    <svg {...stroke} {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8.5 14c.9 1.3 2 2 3.5 2s2.6-.7 3.5-2" />
+      <path d="M9 9.5h.01M15 9.5h.01" strokeWidth="2.6" />
+    </svg>
+  );
+}
+
+export function FilmIcon(props) {
+  return (
+    <svg {...stroke} {...props}>
+      <rect x="3" y="4" width="18" height="16" rx="2.5" />
+      <path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4" />
+    </svg>
+  );
+}
+
+export function SparklesIcon(props) {
+  return (
+    <svg {...stroke} {...props}>
+      <path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9L11 3z" />
+      <path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z" />
+    </svg>
+  );
+}
+
+export function HeartIcon(props) {
+  return (
+    <svg {...stroke} {...props}>
+      <path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z" />
     </svg>
   );
 }

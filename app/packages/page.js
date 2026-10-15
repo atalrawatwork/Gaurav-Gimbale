@@ -2,6 +2,7 @@ import Link from "next/link";
 import WaLink from "@/components/WaLink";
 import JsonLd from "@/components/JsonLd";
 import PageTitle from "@/components/PageTitle";
+import ShootCards from "@/components/ShootCards";
 import { WhatsAppIcon, ArrowIcon } from "@/components/Icons";
 import { SLOTS, FAQS, SITE, inr } from "@/lib/site";
 import { pageMeta, breadcrumbSchema, faqSchema, offersSchema } from "@/lib/seo";
@@ -65,6 +66,17 @@ export default function Packages() {
           <p className="mt-8 text-sm text-mute">
             All prices are in Indian Rupees (₹). Extra hours are charged at {inr(SITE.extraPerHour)} per hour after the slot ends (Sunrise and Sunset slots only).
           </p>
+        </div>
+      </section>
+
+      <section className="section pt-0" id="shoots">
+        <div className="wrap">
+          <div className="mb-10 max-w-[640px]">
+            <span className="eyebrow">Services &amp; Pricing</span>
+            <h2 className="mb-3 mt-5 text-[clamp(1.9rem,3.6vw,3rem)]">One-day shoot packages</h2>
+            <p className="lead">Candid, cinematic, traditional or pre-wedding. Choose what fits your moment. Custom combinations available, just message on WhatsApp.</p>
+          </div>
+          <ShootCards />
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WaLink from "@/components/WaLink";
 import Gallery from "@/components/Gallery";
+import ShootCards from "@/components/ShootCards";
 import JsonLd from "@/components/JsonLd";
 import { WhatsAppIcon, InstagramIcon, ArrowIcon, CheckIcon } from "@/components/Icons";
 import { SITE, SLOTS, PHOTOS, inr, hasRealInstagram } from "@/lib/site";
@@ -166,6 +167,18 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ONE-DAY SHOOT PACKAGES */}
+      <section className="section pt-0">
+        <div className="wrap">
+          <div className="reveal mb-10 max-w-[640px]">
+            <span className="eyebrow">Services &amp; Pricing</span>
+            <h2 className="mb-3 mt-5 text-[clamp(1.9rem,3.6vw,3rem)]">Simple, honest packages</h2>
+            <p className="lead">Choose a plan that fits your moment. Custom combinations available, just message on WhatsApp.</p>
+          </div>
+          <ShootCards />
         </div>
       </section>
 
