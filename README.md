@@ -1,8 +1,8 @@
-# Gaurav Gimbal – Photography & Booking (Next.js 14, App Router)
+# Gaurav Gimbal – Photography & Booking (Next.js 16, React 19, Tailwind CSS 4, App Router)
 
 Pages: `/` Home · `/packages` Packages & Pricing · `/calculator` Live cost calculator + WhatsApp message generator · `/contact` Book & Contact
 
-## Run
+## Run (Node 20.9+)
 ```bash
 npm install
 cp .env.example .env.local     # set NEXT_PUBLIC_SITE_URL to your real domain
@@ -21,7 +21,7 @@ npm run build && npm start     # production
 - JSON-LD: LocalBusiness/ProfessionalService, Person, WebSite, BreadcrumbList, Service + Offers (₹ prices), FAQPage
 - `sitemap.xml`, `robots.txt`, web manifest, favicon (`app/icon.svg`) and Apple touch icon
 - One `<h1>` per page, semantic header/nav/main/footer, keyword-rich image alt text, breadcrumbs, internal links
-- `next/image` (AVIF/WebP, responsive sizes, priority hero), `next/font` with swap, long-cache headers for images
+- `next/image` (AVIF/WebP, responsive sizes, priority hero), `next/font` (Fraunces + Manrope, swap), long-cache headers for images
 
 ## After deploying (Vercel recommended)
 1. Set `NEXT_PUBLIC_SITE_URL` (and optional `NEXT_PUBLIC_GSC_VERIFICATION`) in project env vars.

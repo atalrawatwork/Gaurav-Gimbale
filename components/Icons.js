@@ -24,13 +24,29 @@ export function PhoneIcon(props) {
   );
 }
 
+export function ArrowIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
+export function CheckIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M5 12.5l4.5 4.5L19 7.5" />
+    </svg>
+  );
+}
+
 export function LogoMark(props) {
   return (
     <svg viewBox="0 0 64 64" aria-hidden="true" {...props}>
-      <rect width="64" height="64" rx="16" fill="#17171a" />
-      <path d="M11 37A21 21 0 0 1 53 37" fill="none" stroke="#f3d9d2" strokeWidth="3" strokeLinecap="round" />
-      <path d="M23 27h4l2-3h6l2 3h4a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H23a3 3 0 0 1-3-3V30a3 3 0 0 1 3-3z" fill="none" stroke="#fff" strokeWidth="3" strokeLinejoin="round" />
-      <circle cx="32" cy="36" r="5" fill="#fff" />
+      <rect width="64" height="64" rx="16" fill="#1a160f" stroke="#c9a063" strokeOpacity=".5" />
+      <path d="M11 37A21 21 0 0 1 53 37" fill="none" stroke="#dfbb80" strokeWidth="3" strokeLinecap="round" />
+      <path d="M23 27h4l2-3h6l2 3h4a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H23a3 3 0 0 1-3-3V30a3 3 0 0 1 3-3z" fill="none" stroke="#f6f0e4" strokeWidth="3" strokeLinejoin="round" />
+      <circle cx="32" cy="36" r="5" fill="#dfbb80" />
     </svg>
   );
 }

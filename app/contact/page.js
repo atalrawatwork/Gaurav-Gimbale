@@ -2,8 +2,9 @@ import Link from "next/link";
 import Generator from "@/components/Generator";
 import WaLink from "@/components/WaLink";
 import JsonLd from "@/components/JsonLd";
+import PageTitle from "@/components/PageTitle";
 import { WhatsAppIcon, InstagramIcon, PhoneIcon } from "@/components/Icons";
-import { SITE } from "@/lib/site";
+import { SITE, hasRealInstagram, inr } from "@/lib/site";
 import { pageMeta, breadcrumbSchema } from "@/lib/seo";
 
 export const metadata = pageMeta({
@@ -18,47 +19,56 @@ export default function Contact() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Book & Contact", path: "/contact" }])} />
-      <section className="page-title">
-        <div className="wrap">
-          <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>Contact</span></nav>
-          <h1>Book your <em className="it">slot</em></h1>
-          <p className="lead">The fastest way to book is WhatsApp. Your selected slot and extra hours are added to the message automatically.</p>
-        </div>
-      </section>
+      <PageTitle
+        crumb="Contact"
+        title={<>Book your <span className="gold-text italic">slot</span></>}
+        lead="The fastest way to book is WhatsApp. Your selected slot and extra hours are added to the message automatically."
+      />
 
-      <section className="section" style={{ paddingTop: 36 }}>
+      <section className="section pt-4">
         <div className="wrap">
-          <div className="contact-grid">
-            <div className="contact-card wa">
-              <h2>WhatsApp</h2>
-              <p>Tap the button, review the message and press send. Gaurav will confirm availability.</p>
-              <div className="row">
-                <WaLink><WhatsAppIcon /> Book on WhatsApp</WaLink>
-              </div>
-              <p>Number: <span className="sel">{SITE.phone}</span></p>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="card">
+              <h2 className="text-[1.7rem]">WhatsApp</h2>
+              <p className="text-mute">Tap the button, review the message and press send. Gaurav will confirm availability.</p>
+              <div className="flex flex-wrap gap-3"><WaLink><WhatsAppIcon /> Book on WhatsApp</WaLink></div>
+              <p className="text-sm text-mute">Number: <span className="select-all text-cream">{SITE.phone}</span></p>
             </div>
-            <div className="contact-card ig">
-              <h2>Instagram</h2>
-              <p>See recent reels and shoots, and message Gaurav directly.</p>
-              <div className="row">
-                <a className="btn" href={SITE.instagram} target="_blank" rel="noopener noreferrer me"><InstagramIcon /> Follow on Instagram</a>
+            <div className="card">
+              <h2 className="text-[1.7rem]">{hasRealInstagram ? "Instagram & Call" : "Call"}</h2>
+              <p className="text-mute">
+                {hasRealInstagram ? "See recent reels and shoots, and message Gaurav directly." : "Prefer a quick chat? Call Gaurav directly."}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {hasRealInstagram && (
+                  <a className="btn" href={SITE.instagram} target="_blank" rel="noopener noreferrer me"><InstagramIcon /> Follow on Instagram</a>
+                )}
                 <a className="btn btn-ghost" href={SITE.phoneHref}><PhoneIcon /> Call</a>
               </div>
             </div>
           </div>
 
-          <div className="facts">
-            <div><b>Jaipur, Rajasthan</b>All shoots happen in and around the city</div>
-            <div><b>Sunrise · Sunset · Full Day</b>Pick the light you love</div>
-            <div><b>₹300 / extra hour</b>After the slot ends (Sunrise &amp; Sunset)</div>
+          <div className="mt-6 grid gap-6 rounded-3xl border border-black/10 bg-snow/60 p-8 md:grid-cols-3">
+            {[
+              ["Jaipur, Rajasthan", "All shoots happen in and around the city"],
+              ["Sunrise · Sunset · Full Day", "Pick the light you love"],
+              [`${inr(SITE.extraPerHour)} / extra hour`, "After the slot ends (Sunrise & Sunset)"],
+            ].map(([b, t]) => (
+              <div key={b}>
+                <b className="block font-display text-lg font-semibold text-gold-300">{b}</b>
+                <span className="text-sm text-mute">{t}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="wrap" style={{ maxWidth: 720 }}>
+      <section className="section pt-0">
+        <div className="wrap max-w-[720px]">
           <Generator variant="compact" />
-          <p className="fine">Want to add your date, name and preferred location? Use the <Link href="/calculator" style={{ textDecoration: "underline" }}>full cost calculator</Link>.</p>
+          <p className="mt-5 text-sm text-mute">
+            Want to add your date, name and preferred location? Use the <Link href="/calculator" className="text-gold-300 underline underline-offset-4">full cost calculator</Link>.
+          </p>
         </div>
       </section>
     </>
