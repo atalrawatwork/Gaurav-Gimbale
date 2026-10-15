@@ -5,7 +5,7 @@ export default function manifest() {
     description: "Book reels and photo shoot slots in Jaipur.",
     start_url: "/",
     display: "standalone",
-    background_color: "#fcfbf9",
+    background_color: "#f1ece4",
     theme_color: "#17171a",
     icons: [
       { src: "/icon.svg", sizes: "any", type: "image/svg+xml" },

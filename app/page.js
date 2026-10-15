@@ -23,11 +23,11 @@ export default function Home() {
         <div className="wrap hero-grid">
           <div>
             <span className="eyebrow">Jaipur · Gimbal Reels · Photo Shoots</span>
-            <h1 className="hi" lang="hi">
-              गौरव <span className="en">gimbal</span> के साथ बनवाए अपनी अविस्मरणीय <span className="en">reels</span> और <span className="en">photos</span>.. आज ही बुक करे अपना <span className="en">slot</span>...
+            <h1>
+              Create your unforgettable <span className="en">reels</span> and <span className="en">photos</span> with Gaurav <span className="en">Gimbal</span>. Book your slot today.
             </h1>
             <p className="lead">
-              Gaurav Gimbal ke saath Jaipur ke Hawa Mahal, Amer Fort, Nahargarh aur Jal Mahal par sunrise ya sunset shoot karwaiye. Slots sirf {inr(1000)} se shuru.
+              Shoot at Hawa Mahal, Amer Fort, Nahargarh and Jal Mahal at sunrise, or at Jaipur&rsquo;s best spots at sunset. Slots start at just {inr(1000)}.
             </p>
             <div className="row">
               <WaLink><WhatsAppIcon /> Book on WhatsApp</WaLink>

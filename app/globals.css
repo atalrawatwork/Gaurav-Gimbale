@@ -1,13 +1,12 @@
 /* Gaurav Gimbal — light editorial magazine look.
    Layout: airy white canvas, big serif headlines, pastel blocks behind photography. */
 :root{
-  --bg:#fcfbf9; --surface:#ffffff; --soft:#f4f2ee; --line:#e8e4de;
-  --ink:#17171a; --muted:#686870; --blush:#f5e3de; --sage:#e3ebe1; --mist:#e2eaf2;
-  --accent:#b8826d; --wa:#1ea952; --wa-dark:#168a41;
-  --serif:var(--font-bodoni),"Didot","Times New Roman",serif;
-  --hindi:var(--font-hindi),"Noto Serif Devanagari",serif;
-  --sans:var(--font-hanken),"Helvetica Neue",Arial,sans-serif;
-  --radius:18px; --shadow:0 20px 50px -28px rgba(23,23,26,.35);
+  --bg:#f1ece4; --surface:#ffffff; --soft:#e7e0d5; --line:#d6cdbf;
+  --ink:#111113; --muted:#4f4f58; --blush:#efc7ba; --sage:#c3d6c2; --mist:#c2d3e6;
+  --accent:#a2543d; --wa:#1ea952; --wa-dark:#168a41;
+  --serif:var(--font-poppins),"Poppins",system-ui,sans-serif;
+  --sans:var(--font-poppins),"Poppins",system-ui,sans-serif;
+  --radius:18px; --shadow:0 22px 50px -26px rgba(17,17,19,.45);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -21,11 +20,10 @@ p{margin:0}
 .section{padding-block:clamp(56px,8vw,110px)}
 .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
 .lead{color:var(--muted);font-size:1.08rem;max-width:56ch}
-.hi{font-family:var(--hindi)}
 em.it{font-style:italic;color:var(--accent)}
 
 /* header */
-.site-header{position:sticky;top:0;z-index:50;background:rgba(252,251,249,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(241,236,228,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
 .brand svg{width:34px;height:34px}
@@ -256,3 +254,51 @@ em.it{font-style:italic;color:var(--accent)}
 .crumbs{font-size:13px;color:var(--muted);display:flex;gap:8px}
 .crumbs a{text-decoration:none}
 .gallery img{border-radius:0}
+
+/* ---- theme v2: deeper colours, Poppins, bento gallery ---- */
+body{font-weight:400;font-size:16.5px}
+h1,h2,h3{font-weight:600;line-height:1.15;letter-spacing:-.025em}
+em.it{font-style:normal;color:var(--accent)}
+.brand b{font-weight:600;font-size:1.12rem;letter-spacing:-.01em}
+.menu a{font-weight:500}
+.btn{font-weight:600}
+.hero{background:linear-gradient(180deg,#ead5c9 0%,var(--bg) 100%)}
+.hero h1{font-size:clamp(2.1rem,4.3vw,3.4rem);line-height:1.12;font-weight:700;letter-spacing:-.03em;margin-block:16px 20px}
+.hero h1 .en{font-style:normal;color:var(--accent)}
+.hero-art::before{background:#e2b3a2}
+.hero-art::after{background:#a7c0a6}
+.hero-meta{border-color:#cdbfae}
+.strip{background:var(--ink);border-color:var(--ink)}
+.strip ul{color:#ece6dc;font-family:var(--sans);font-style:normal;font-weight:500;font-size:.95rem;letter-spacing:.05em}
+.strip li::before{color:#e3a58f}
+.head h2,.split h2{font-size:clamp(1.7rem,3.3vw,2.5rem)}
+.page-title{background:linear-gradient(180deg,#ead5c9 0%,var(--bg) 100%);padding-bottom:clamp(24px,4vw,48px)}
+.page-title h1{font-size:clamp(2.1rem,5vw,3.6rem);font-weight:700}
+.card h2{font-size:1.55rem!important;letter-spacing:-.02em}
+.card.tint-1{background:linear-gradient(180deg,var(--blush),var(--surface) 58%)}
+.card.tint-2{background:linear-gradient(180deg,var(--mist),var(--surface) 58%)}
+.price{font-size:2.8rem;font-weight:700;letter-spacing:-.03em}
+.price small{font-weight:400}
+.slot .p,.hero-meta b,.float-card b,.facts b{font-weight:600}
+.bill .total b{font-size:2.5rem;font-weight:700;letter-spacing:-.03em}
+.step h3{font-size:1.3rem}
+.cta h2{font-size:clamp(1.6rem,3vw,2.3rem)}
+.contact-card h2{font-size:1.6rem}
+.contact-card.wa{background:var(--sage)}
+.contact-card.ig{background:var(--blush)}
+.site-footer{background:var(--ink);border-color:var(--ink);color:#d9d3c9}
+.site-footer .brand b{color:#fff}
+.site-footer .brand small,.foot h4,.foot p,.copy{color:#a09a8f}
+.foot a{color:#ece6dc}.foot a:hover{color:#e3a58f}
+.copy{border-color:#2c2c31}
+.split .photo{display:grid}
+.split .photo img{width:100%;height:100%;max-height:640px;object-fit:cover}
+
+/* gallery: bento grid, every photo cropped to its tile */
+.gallery{columns:auto;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,18vw,230px);grid-auto-flow:dense;gap:14px}
+.gallery figure{margin:0;break-inside:auto;min-height:0}
+.gallery .t-big{grid-column:span 2;grid-row:span 2}
+.gallery .t-tall{grid-row:span 2}
+@media (max-width:760px){
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;gap:10px}
+}

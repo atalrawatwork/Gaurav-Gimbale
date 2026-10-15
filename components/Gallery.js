@@ -13,8 +13,8 @@ export default function Gallery({ photos }) {
     <>
       <div className="gallery">
         {photos.map((p) => (
-          <figure key={p.src} tabIndex={0} onClick={() => setActive(p)} onKeyDown={(e) => e.key === "Enter" && setActive(p)}>
-            <Image src={p.src} alt={p.alt} width={p.w} height={p.h} sizes="(max-width: 520px) 50vw, (max-width: 980px) 50vw, 380px" />
+          <figure key={p.src} className={p.tile} tabIndex={0} onClick={() => setActive(p)} onKeyDown={(e) => e.key === "Enter" && setActive(p)}>
+            <Image src={p.src} alt={p.alt} fill sizes="(max-width: 760px) 100vw, 560px" style={{ objectFit: "cover", objectPosition: p.pos }} />
             <figcaption>{p.cap}</figcaption>
           </figure>
         ))}

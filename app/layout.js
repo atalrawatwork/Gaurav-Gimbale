@@ -1,4 +1,4 @@
-import { Bodoni_Moda, Hanken_Grotesk, Tiro_Devanagari_Hindi } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,9 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
 import { businessSchema, websiteSchema } from "@/lib/seo";
 
-const bodoni = Bodoni_Moda({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-bodoni", display: "swap" });
-const hanken = Hanken_Grotesk({ subsets: ["latin"], variable: "--font-hanken", display: "swap" });
-const hindi = Tiro_Devanagari_Hindi({ subsets: ["devanagari", "latin"], weight: "400", variable: "--font-hindi", display: "swap" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-poppins", display: "swap" });
 
 export const metadata = {
   metadataBase: new URL(SITE.url),
@@ -45,14 +43,14 @@ export const metadata = {
 };
 
 export const viewport = {
-  themeColor: "#fcfbf9",
+  themeColor: "#111113",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN" className={`${bodoni.variable} ${hanken.variable} ${hindi.variable}`}>
+    <html lang="en-IN" className={poppins.variable}>
       <body>
         <JsonLd data={[businessSchema(), websiteSchema()]} />
         <Header />
