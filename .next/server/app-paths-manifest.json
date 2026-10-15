@@ -1,8 +1,4 @@
 {
   "/page": "app/page.js",
-  "/packages/page": "app/packages/page.js",
-  "/calculator/page": "app/calculator/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/manifest.webmanifest/route": "app/manifest.webmanifest/route.js",
   "/icon.svg/route": "app/icon.svg/route.js"
 }
